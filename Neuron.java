@@ -7,12 +7,16 @@ public class Neuron {
         this.weights = weights;
         this.bias = bias;
     }
-    
+
     public double get(double[] inputs) {
         double sum = bias;
         for (int i = 0; i < weights.length; i++) {
             sum += weights[i] * inputs[i];
         }
-        return sum;
+        return sum/inputs.length;
+    }
+
+    public int getNumOfInputs() {
+        return weights.length;
     }
 }
