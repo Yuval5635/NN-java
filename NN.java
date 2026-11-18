@@ -11,7 +11,7 @@ public class NN {
         layers[settings.layerSizes().length] = new Layer(settings.numOfOutputs(), settings.weights()[settings.layerSizes().length], new double[settings.numOfOutputs()]);
     }
 
-    public double[] get(double[] inputs) {
+    public double[] predict(double[] inputs) {
         double[] outputs = inputs;
         for (Layer layer : layers) {
             outputs = layer.get(outputs);
